@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
 app.post('/', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ error: 'All fields are required.' });
+  }
+
   try {
     const emailBody = `
       <!DOCTYPE html>
@@ -272,25 +276,29 @@ app.post('/', async (req, res) => {
       }
     });
 
+    // Verify the transporter can actually authenticate before trying to send.
+    // This makes bad credentials show up clearly in your server logs instead
+    // of failing silently.
+    await transporter.verify();
+
     const mailOptions = {
-      from: email,
-      to: `${process.env.EMAIL_USER}`,
-      subject: subject,
+      from: `"${name} via Portfolio" <${process.env.EMAIL_USER}>`, // must be the authenticated address
+      replyTo: email,                                              // hitting "reply" goes to the visitor
+      to: process.env.EMAIL_USER,
+      subject: `Portfolio Contact: ${subject}`,
       html: emailBody
-    }
+    };
 
-    await transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        return res.json({ 'error': 'An error occurred' });
-      }
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent:', info.messageId);
 
-      return res.json({ 'message': 'Email sent successfully' });
-    });
+    return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    return res.json({ 'error': error.message });
+    console.error('Failed to send email:', error);
+    return res.status(500).json({ error: error.message || 'An error occurred while sending the email.' });
   }
 });
 
 app.listen(port, () => {
-  return `Server is up and running on port: ${port}`;
+  console.log(`Server is up and running on port: ${port}`);
 });

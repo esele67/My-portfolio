@@ -93,7 +93,7 @@ export const projects: Project[] = [
     description: "A production school-management platform handling everything from student records to result publishing. It runs distinct dashboards for administrators, form masters, principals, and parents, with automated result compilation, approval workflows, PDF report generation, and real-time announcements.",
     image: "/assets/projects/admin.png",
     images: ["/projects/admin.png", "/projects/principal.png"],
-    link: "PASTE_YOUR_LIVE_LINK_HERE",
+    link: "https://www.seedfaithbasicschool.com.ng/",
     tech: ["React.js", "Node.js", "Express.js", "MySQL", "JWT", "Tailwind CSS", "Puppeteer", "Cloudinary"],
     isPersonal: false,
   },
@@ -141,15 +141,7 @@ export const projects: Project[] = [
     tech: ["JavaScript", "Python", "Streamlit", "NLTK"],
     isPersonal: true,
   },
-  {
-    title: "Nexeon Tech Solutions website",
-    description: "Developed a responsive corporate website incorporating SEO best practices to enhance organic traffic and brand visibility.",
-    image: "/assets/projects/nexeon.png",
-    link: "https://nexeon-web.vercel.app/",
-    github: "https://github.com/esele67/Nexeon-website.git",
-    tech: ["React.js", "CSS", "JavaScript"],
-    isPersonal: false,
-  },
+ 
 ];
 
 export const services: Service[] = [

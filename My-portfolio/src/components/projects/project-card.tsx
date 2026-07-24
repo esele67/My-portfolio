@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Project } from "@/utils/types.utils";
-import { ExternalLink, Github, User, Building2 } from "lucide-react";
+import { ExternalLink, Github, User, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,6 +13,28 @@ const ProjectCard = ({
   index: number;
   isVisible: boolean;
 }) => {
+  const images = project.images && project.images.length > 0 ? project.images : [project.image];
+  const hasMultipleImages = images.length > 1;
+  const [currentImage, setCurrentImage] = useState<number>(0);
+
+  const goToPrev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const goToNext = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const goToSlide = (e: React.MouseEvent, slideIndex: number) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImage(slideIndex);
+  };
+
   return (
     <div
       className={`group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-gray-200/50 hover:border-indigo-200 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-2 transform ${
@@ -25,12 +48,49 @@ const ProjectCard = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         <Image
-          src={project.image}
-          alt={project.title}
+          src={images[currentImage]}
+          alt={`${project.title} - screenshot ${currentImage + 1}`}
           height={400}
           width={400}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
+
+        {hasMultipleImages && (
+          <>
+            <button
+              type="button"
+              onClick={goToPrev}
+              aria-label="Previous image"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer"
+            >
+              <ChevronLeft size={18} className="text-indigo-600" />
+            </button>
+            <button
+              type="button"
+              onClick={goToNext}
+              aria-label="Next image"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer"
+            >
+              <ChevronRight size={18} className="text-indigo-600" />
+            </button>
+
+            <div className="absolute bottom-4 right-4 z-20 flex space-x-1.5">
+              {images.map((_, slideIndex) => (
+                <button
+                  key={slideIndex}
+                  type="button"
+                  onClick={(e) => goToSlide(e, slideIndex)}
+                  aria-label={`Go to image ${slideIndex + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    slideIndex === currentImage
+                      ? 'w-6 bg-white'
+                      : 'w-2 bg-white/60 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
 
         <div className="absolute top-4 left-4 z-20">
           <div className={`flex items-center px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm transition-all duration-300 ${
