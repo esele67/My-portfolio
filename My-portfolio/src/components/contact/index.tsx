@@ -77,14 +77,27 @@ const Contact = () => {
   
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    // Guard against a missing/unset env var so we fail with a clear message
+    // instead of silently POSTing to "/undefined" on our own domain.
+    if (!apiBaseUrl) {
+      showNotification(
+        NotificationType.ERROR,
+        'The contact form is not configured correctly (missing API URL). Please email me directly instead.'
+      );
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/`, {
-  name,
-  email,
-  subject,
-  message,
+      const response = await axios.post(`${apiBaseUrl}/`, {
+        name,
+        email,
+        subject,
+        message,
       });
 
       showNotification(
@@ -225,7 +238,7 @@ const Contact = () => {
                         id="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200 text-gray-900 placeholder-gray-400"
                         placeholder="Your Name"
                         required
                       />
@@ -241,7 +254,7 @@ const Contact = () => {
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200 text-gray-900 placeholder-gray-400"
                         placeholder="your.email@example.com"
                         required
                       />
@@ -259,7 +272,7 @@ const Contact = () => {
                       id="subject"
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200 text-gray-900 placeholder-gray-400"
                       placeholder="Project Discussion"
                       required
                     />
@@ -276,7 +289,7 @@ const Contact = () => {
                       rows={5}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200 resize-none"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-indigo-200 resize-none text-gray-900 placeholder-gray-400"
                       placeholder="Tell me about your project or how I can help..."
                       required
                     ></textarea>

@@ -299,6 +299,12 @@ app.post('/', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is up and running on port: ${port}`);
-});
+// Only run a persistent listener in local dev.
+// On Vercel, the exported app is invoked directly per-request.
+if (!process.env.VERCEL) {
+  app.listen(port || 5000, () => {
+    console.log(`Server is up and running on port: ${port || 5000}`);
+  });
+}
+
+module.exports = app;
