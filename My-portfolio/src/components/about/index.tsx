@@ -124,8 +124,17 @@ const About = () => {
               Professional <span className="text-indigo-600">Experience</span>
             </h3>
             <div className="relative space-y-8">
-             
-            
+
+              <ExperienceCard
+                title="Full-Stack Developer"
+                company="Seed Faith Basic School Result Management Portal"
+                location="Abuja, Nigeria"
+                period="2026"
+                description="Built a full-stack school result management system covering student records, result compilation, approval workflows, and parent access. Added role-based authentication for Administrators, Form Masters, Principals, and Parents, with automated result processing, PDF report generation, announcements, and notifications."
+                techStack="React.js, Node.js, Express.js, MySQL, JWT, Tailwind CSS, Puppeteer, Cloudinary, REST APIs"
+                delay={300}
+              />
+
               <ExperienceCard
                 title="Software Engineering Intern"
                 company="Sleeky Programmers Ltd"
@@ -145,9 +154,6 @@ const About = () => {
                 techStack="Html, CSS, Bootstrap, JavaScript, php, Git"
                 delay={400}
               />
-
-               
-
 
             </div>
           </div>
