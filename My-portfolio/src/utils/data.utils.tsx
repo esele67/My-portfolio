@@ -92,7 +92,7 @@ export const projects: Project[] = [
     title: "Seed Faith Basic School Result Management Portal",
     description: "A production school-management platform handling everything from student records to result publishing. It runs distinct dashboards for administrators, form masters, principals, and parents, with automated result compilation, approval workflows, PDF report generation, and real-time announcements.",
     image: "/assets/projects/admin.png",
-    images: ["/projects/admin.png", "/projects/principal.png"],
+    images: ["assets/projects/admin.png", "assets/projects/principal.png"],
     link: "https://www.seedfaithbasicschool.com.ng/",
     tech: ["React.js", "Node.js", "Express.js", "MySQL", "JWT", "Tailwind CSS", "Puppeteer", "Cloudinary"],
     isPersonal: false,
