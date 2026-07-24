@@ -89,24 +89,14 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
-    title: "Nexeon Tech Solutions website",
-    description: "Developed a responsive corporate website incorporating SEO best practices to enhance organic traffic and brand visibility.",
-    image: "/assets/projects/nexeon.png",
-    link: "https://nexeon-web.vercel.app/",
-    github: "https://github.com/esele67/Nexeon-website.git",
-    tech: ["React.js", "CSS", "JavaScript"],
-    isPersonal: false,
-  },
-  {
-    title: "School Responsive Platform",
-    description: "Built a fully responsive educational website using React.js and Firebase to present school details, programs, and admissions information.",
-    image: "/assets/projects/s.png",
-    link: "https://sfbs-website.vercel.app/",
-    github: "https://github.com/esele67/SFBS-website.git",
-    tech: ["React.js"],
+    title: "Seed Faith Basic School Result Management Portal",
+    description: "A production school-management platform handling everything from student records to result publishing. It runs distinct dashboards for administrators, form masters, principals, and parents, with automated result compilation, approval workflows, PDF report generation, and real-time announcements.",
+    image: "/projects/admin.png",
+    images: ["/projects/admin.png", "/projects/principal.png"],
+    link: "PASTE_YOUR_LIVE_LINK_HERE",
+    tech: ["React.js", "Node.js", "Express.js", "MySQL", "JWT", "Tailwind CSS", "Puppeteer", "Cloudinary"],
     isPersonal: true,
   },
-
   {
     title: "Water Delivery Management System",
     description: "Developed a water management system for a water delivery company to streamline delivery operations, track customer orders, and manage distribution activities, featuring a mobile frontend for customers and a web application for administrative management.",
@@ -116,7 +106,6 @@ export const projects: Project[] = [
     tech: ["React.js", "React Native", "Node.js", "Express", "MongoDB"],
     isPersonal: false,
   },
-  
   {
     title: "School Management System",
     description: "A web-based platform that streamlines school administration by managing student registration, attendance tracking, and exam score computation, helping automate academic records and administrative workflows.",
@@ -134,9 +123,7 @@ export const projects: Project[] = [
     tech: ["Python"],
     isPersonal: true,
   },
-
-    
-   {
+  {
     title: "Interview-Pro ",
     description: "InterviewPro is a technical interview preparation web app that helps software engineering candidates track learning, practice coding problems, prepare behavioral answers, and log interviews in one place. Built with React, it runs entirely in the browser using localStorage, requiring no backend while supporting offline use and user-specific progress tracking.",
     image: "/assets/projects/ip.png",
@@ -145,7 +132,6 @@ export const projects: Project[] = [
     tech: ["React.js", "JavaScript", "LocalStorage"],
     isPersonal: true,
   },
- 
   {
     title: "AI-powered Resume Analyzer ",
     description: "Developed an AI-powered Resume Analyzer web application that evaluates resumes against job descriptions, scores ATS compatibility, highlights matched/missing keywords, and provides actionable optimization suggestions. Built with Python, Streamlit, NLTK, and scikit-learn for interactive, research-grade resume analysis.",
@@ -155,15 +141,15 @@ export const projects: Project[] = [
     tech: ["JavaScript", "Python", "Streamlit", "NLTK"],
     isPersonal: true,
   },
-     {
-    title: "Procurement Dashboard",
-    description: "Designed and developed the frontend interface of a procurement dashboard for tracking purchase requests, supplier management, budget monitoring, and procurement reporting.",
-    image: "/assets/projects/pr.png",
-    link: "https://github.com/esele67/Nexeon-Procurement-System.git",
-    tech: ["React.js"],
+  {
+    title: "Nexeon Tech Solutions website",
+    description: "Developed a responsive corporate website incorporating SEO best practices to enhance organic traffic and brand visibility.",
+    image: "/assets/projects/nexeon.png",
+    link: "https://nexeon-web.vercel.app/",
+    github: "https://github.com/esele67/Nexeon-website.git",
+    tech: ["React.js", "CSS", "JavaScript"],
     isPersonal: false,
   },
-
 ];
 
 export const services: Service[] = [
