@@ -90,58 +90,100 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     title: "Seed Faith Basic School Result Management Portal",
-    description: "A production school-management platform handling everything from student records to result publishing. It runs distinct dashboards for administrators, form masters, principals, and parents, with automated result compilation, approval workflows, PDF report generation, and real-time announcements.",
+    description:
+      "A production school-management platform handling everything from student records to result publishing. It runs distinct dashboards for administrators, form masters, principals, and parents, with automated result compilation, approval workflows, PDF report generation, and real-time announcements.",
     image: "/assets/projects/admin.png",
-    images: ["assets/projects/admin.png", "assets/projects/principal.png"],
+    images: [
+      "/assets/projects/admin.png",
+      "/assets/projects/principal.png",
+    ],
     link: "https://www.seedfaithbasicschool.com.ng/",
-    tech: ["React.js", "Node.js", "Express.js", "MySQL", "JWT", "Tailwind CSS", "Puppeteer", "Cloudinary"],
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "JWT",
+      "Tailwind CSS",
+      "Puppeteer",
+      "Cloudinary",
+    ],
     isPersonal: false,
   },
+
+  {
+    title: "Code Campus Code Arena",
+    description:
+      "A coding challenge and competition platform built for Code Campus, allowing students to practice programming challenges, submit solutions, participate in coding battles, and compete through a live leaderboard.",
+    image: "/assets/projects/code-arena.png",
+    images: [
+      "/assets/projects/code-arena.png",
+      "/assets/projects/code-arenaa.png",
+    ],
+    link: "https://code-campus-code-arena.vercel.app/",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQ",
+      "Tailwind CSS",
+    ],
+    isPersonal: false,
+  },
+
   {
     title: "Water Delivery Management System",
-    description: "Developed a water management system for a water delivery company to streamline delivery operations, track customer orders, and manage distribution activities, featuring a mobile frontend for customers and a web application for administrative management.",
+    description:
+      "Developed a water management system for a water delivery company to streamline delivery operations, track customer orders, and manage distribution activities, featuring a mobile frontend for customers and a web application for administrative management.",
     image: "/assets/projects/h2o.png",
     link: "https://github.com/esele67/H2O-app.git",
     github: "https://github.com/esele67/H2O-app.git",
     tech: ["React.js", "React Native", "Node.js", "Express", "MongoDB"],
     isPersonal: false,
   },
+
   {
     title: "School Management System",
-    description: "A web-based platform that streamlines school administration by managing student registration, attendance tracking, and exam score computation, helping automate academic records and administrative workflows.",
+    description:
+      "A web-based platform that streamlines school administration by managing student registration, attendance tracking, and exam score computation, helping automate academic records and administrative workflows.",
     image: "/assets/projects/ms.png",
     link: "https://github.com/esele67/School_Management_System.git",
     tech: ["Html", "Bootstrap", "Javascript", "PHP", "MySql"],
     isPersonal: false,
   },
+
   {
     title: "Student Performance Tracker AI system",
-    description: "Designed and developed an intelligent student performance monitoring system that analyzes academic data to detect trends, predict risk levels, and generate visual performance reports.",
+    description:
+      "Designed and developed an intelligent student performance monitoring system that analyzes academic data to detect trends, predict risk levels, and generate visual performance reports.",
     image: "/assets/projects/stu-web.png",
     link: "https://student-performance-ai-prediction-analytics.streamlit.app/",
     github: "https://github.com/esele67/student-performance-ai.git",
     tech: ["Python"],
     isPersonal: true,
   },
+
   {
-    title: "Interview-Pro ",
-    description: "InterviewPro is a technical interview preparation web app that helps software engineering candidates track learning, practice coding problems, prepare behavioral answers, and log interviews in one place. Built with React, it runs entirely in the browser using localStorage, requiring no backend while supporting offline use and user-specific progress tracking.",
+    title: "Interview-Pro",
+    description:
+      "InterviewPro is a technical interview preparation web app that helps software engineering candidates track learning, practice coding problems, prepare behavioral answers, and log interviews in one place. Built with React, it runs entirely in the browser using localStorage, requiring no backend while supporting offline use and user-specific progress tracking.",
     image: "/assets/projects/ip.png",
     link: "https://interview-pro-one.vercel.app/",
     github: "https://github.com/esele67/Interview-Pro",
     tech: ["React.js", "JavaScript", "LocalStorage"],
     isPersonal: true,
   },
+
   {
-    title: "AI-powered Resume Analyzer ",
-    description: "Developed an AI-powered Resume Analyzer web application that evaluates resumes against job descriptions, scores ATS compatibility, highlights matched/missing keywords, and provides actionable optimization suggestions. Built with Python, Streamlit, NLTK, and scikit-learn for interactive, research-grade resume analysis.",
+    title: "AI-powered Resume Analyzer",
+    description:
+      "Developed an AI-powered Resume Analyzer web application that evaluates resumes against job descriptions, scores ATS compatibility, highlights matched/missing keywords, and provides actionable optimization suggestions. Built with Python, Streamlit, NLTK, and scikit-learn for interactive, research-grade resume analysis.",
     image: "/assets/projects/ai-rs.png",
     link: "https://ai-resume-analyzer-mn8l.onrender.com/",
     github: "https://github.com/esele67/ai-resume-analyzer",
     tech: ["JavaScript", "Python", "Streamlit", "NLTK"],
     isPersonal: true,
   },
- 
 ];
 
 export const services: Service[] = [
