@@ -1,5 +1,14 @@
 import { NavLink, Project, Service, Skill, SocialLink } from "./types.utils";
-import { Code, Github, Globe, Instagram, Layout, Linkedin, Server, ShoppingCart } from "lucide-react";
+import {
+  Code,
+  Github,
+  Globe,
+  Instagram,
+  Layout,
+  Linkedin,
+  Server,
+  ShoppingCart,
+} from "lucide-react";
 import {
   SiExpress,
   SiJavascript,
@@ -10,7 +19,7 @@ import {
   SiTypescript,
   SiPython,
   SiPhp,
-  SiMysql 
+  SiMysql,
 } from "react-icons/si";
 
 export const navLinks: NavLink[] = [
@@ -22,8 +31,13 @@ export const navLinks: NavLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { icon: <Github size={20} />, href: 'https://github.com/esele67', label: 'GitHub' },
+  {
+    icon: <Github size={20} />,
+    href: "https://github.com/esele67",
+    label: "GitHub",
+  },
 ];
+
 export const skills: Skill[] = [
   {
     name: "JavaScript",
@@ -40,7 +54,7 @@ export const skills: Skill[] = [
     icon: <SiReact size={24} className="text-blue-300" />,
     level: 85,
   },
-   {
+  {
     name: "Python",
     icon: <SiPython size={24} className="text-blue-300" />,
     level: 85,
@@ -50,11 +64,11 @@ export const skills: Skill[] = [
     icon: <SiNextdotjs size={24} className="text-black" />,
     level: 80,
   },
- {
-  name: "Express.js",
-  icon: <SiExpress size={24} className="text-black" />,
-  level: 80,
-},
+  {
+    name: "Express.js",
+    icon: <SiExpress size={24} className="text-black" />,
+    level: 80,
+  },
   {
     name: "Nest.js",
     icon: <SiNestjs size={24} className="text-red-600" />,
@@ -66,15 +80,15 @@ export const skills: Skill[] = [
     level: 70,
   },
   {
-  name: "PHP",
-  icon: <SiPhp size={24} className="text-indigo-400" />,
-  level: 85,
-},
-   {
-  name: "MySQL",
-  icon: <SiMysql size={24} className="text-blue-500" />,
-  level: 85,
-},
+    name: "PHP",
+    icon: <SiPhp size={24} className="text-indigo-400" />,
+    level: 85,
+  },
+  {
+    name: "MySQL",
+    icon: <SiMysql size={24} className="text-blue-500" />,
+    level: 85,
+  },
   {
     name: "RESTful APIs",
     icon: <Globe size={24} className="text-indigo-600" />,
@@ -116,16 +130,12 @@ export const projects: Project[] = [
     description:
       "A coding challenge and competition platform built for Code Campus, allowing students to practice programming challenges, submit solutions, participate in coding battles, and compete through a live leaderboard.",
     image: "/assets/projects/code-arena.png",
-    images: [
-      "/assets/projects/code-arena.png",
-      "/assets/projects/code-arenaa.png",
-    ],
     link: "https://code-campus-code-arena.vercel.app/",
     tech: [
       "React.js",
       "Node.js",
       "Express.js",
-      "MySQ",
+      "MySQL",
       "Tailwind CSS",
     ],
     isPersonal: false,
@@ -188,38 +198,67 @@ export const projects: Project[] = [
 
 export const services: Service[] = [
   {
-    icon: <Layout size={48} className='text-indigo-600' />,
+    icon: <Layout size={48} className="text-indigo-600" />,
     title: "Custom Web Development",
-    description: "Bespoke web solutions tailored to your specific business needs and requirements.",
-    features: ["Custom Design", "Scalable Architecture", "Modern Frameworks", "SEO Optimized"],
-    isPopular: false
+    description:
+      "Bespoke web solutions tailored to your specific business needs and requirements.",
+    features: [
+      "Custom Design",
+      "Scalable Architecture",
+      "Modern Frameworks",
+      "SEO Optimized",
+    ],
+    isPopular: false,
   },
   {
-    icon: <Globe size={48} className='text-indigo-600' />,
+    icon: <Globe size={48} className="text-indigo-600" />,
     title: "Responsive Design",
-    description: "Mobile-first approach ensuring your site works perfectly on all devices and screen sizes.",
-    features: ["Mobile-First", "Cross-Browser", "Touch Optimized", "Fast Loading"],
-    isPopular: true
+    description:
+      "Mobile-first approach ensuring your site works perfectly on all devices and screen sizes.",
+    features: [
+      "Mobile-First",
+      "Cross-Browser",
+      "Touch Optimized",
+      "Fast Loading",
+    ],
+    isPopular: true,
   },
   {
-    icon: <Code size={48} className='text-indigo-600' />,
+    icon: <Code size={48} className="text-indigo-600" />,
     title: "Single & Multi-Page Applications",
-    description: "Modern SPAs and traditional multi-page websites built with the latest technologies.",
-    features: ["React/Next.js", "Performance Optimized", "Interactive UI"],
-    isPopular: false
+    description:
+      "Modern SPAs and traditional multi-page websites built with the latest technologies.",
+    features: [
+      "React/Next.js",
+      "Performance Optimized",
+      "Interactive UI",
+    ],
+    isPopular: false,
   },
   {
-    icon: <ShoppingCart size={48} className='text-indigo-600' />,
+    icon: <ShoppingCart size={48} className="text-indigo-600" />,
     title: "E-commerce Solutions",
-    description: "Full-featured online stores with secure payment processing and inventory management.",
-    features: ["Payment Integration", "Inventory System", "Admin Dashboard", "Analytics"],
-    isPopular: false
+    description:
+      "Full-featured online stores with secure payment processing and inventory management.",
+    features: [
+      "Payment Integration",
+      "Inventory System",
+      "Admin Dashboard",
+      "Analytics",
+    ],
+    isPopular: false,
   },
   {
-    icon: <Server size={48} className='text-indigo-600' />,
+    icon: <Server size={48} className="text-indigo-600" />,
     title: "Backend & API Integration",
-    description: "Robust backend systems and seamless API integrations to power your web applications.",
-    features: ["RESTful APIs", "Database Design", "Cloud Integration", "Security"],
-    isPopular: false
-  }
+    description:
+      "Robust backend systems and seamless API integrations to power your web applications.",
+    features: [
+      "RESTful APIs",
+      "Database Design",
+      "Cloud Integration",
+      "Security",
+    ],
+    isPopular: false,
+  },
 ];
